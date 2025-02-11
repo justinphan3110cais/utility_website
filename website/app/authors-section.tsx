@@ -14,7 +14,7 @@ export function AuthorsSection() {
       { name: "Long Phan", sup: "1", link: "https://longphan.ai/" },
       { name: "Norman Mu", sup: "3", link: "https://www.normanmu.com/" },
       { name: "Adam Khoja", sup: "1", link: "https://www.linkedin.com/in/adam-khoja-103/" },
-      { name: "Oliver Zhang", sup: "1", link: "" },
+      { name: "Oliver Zhang", sup: "1", link: "https://www.linkedin.com/in/oliver-z-30a16812a/" },
       { name: "Dan Hendrycks", sup: "1", link: "https://people.eecs.berkeley.edu/~hendrycks/" },
     ],
   };
