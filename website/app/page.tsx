@@ -32,7 +32,7 @@ export default function LandingPage() {
       <div className="mb-10 mt-10 flex flex-col items-center gap-4 text-center">
         <Image src={logo} alt="HLS Logo" width={80} height={80} />
         <h1 className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-2xl font-extrabold tracking-tight text-transparent lg:text-4xl">
-          Humanity's Last Exam
+          Utility Engineering
         </h1>
       </div>
         
@@ -52,7 +52,7 @@ export default function LandingPage() {
             not keeping pace in difficulty: LLMs now achieve over 90% accuracy
             on popular benchmarks like MMLU, limiting informed measurement of
             state-of-the-art LLM capabilities. In response, we introduce
-            <span className="text-gray-800"> Humanity's Last Exam</span>, a multi-modal benchmark at the frontier of
+            <span className="text-gray-800"> Utility Engineering</span>, a multi-modal benchmark at the frontier of
             human knowledge, designed to be the final closed-ended academic
             benchmark of its kind with broad subject coverage. The dataset consists of <span className="text-gray-900">3,000</span> challenging questions across over a <span className="text-gray-900">hundred </span>
             subjects. We publicly release these questions, while maintaining a
@@ -78,7 +78,7 @@ export default function LandingPage() {
           <h2 className="mb-4 text-center text-2xl font-bold">Dataset</h2>
           <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
           <p className="text-base leading-relaxed text-gray-700">
-            <span className="text-gray-800">Humanity's Last Exam (HLE)</span> is a global collaborative effort, with
+            <span className="text-gray-800">Utility Engineering (HLE)</span> is a global collaborative effort, with
             questions from nearly <span className="text-gray-900">1,000</span> subject expert contributors affiliated
             with over <span className="text-gray-900">500</span> institutions across <span className="text-gray-900">50</span> countries – comprised
             mostly of professors, researchers, and graduate degree holders.
