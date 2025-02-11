@@ -5,7 +5,7 @@ import logo from "@/app/assets/utility_engineering_logo.svg";
 import figure1 from "@/app/assets/figures/fig1.png";
 import figure2 from "@/app/assets/figures/fig2.png";
 import { AuthorsSection } from "@/app/authors-section";
-import { MessageSquare, Mail } from "lucide-react";
+import { /* MessageSquare, Mail */ } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function LandingPage() {
