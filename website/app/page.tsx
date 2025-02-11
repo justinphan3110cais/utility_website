@@ -7,29 +7,12 @@ import figure1 from "@/app/assets/figures/fig1.png";
 import figure2 from "@/app/assets/figures/fig2.png";
 import { AuthorsSection } from "@/app/authors-section";
 import { /* MessageSquare, Mail */ } from "lucide-react";
-import { useState, useEffect } from "react";
 import Sources from "@/app/Sources";
 
 export default function LandingPage() {
-  const [bibtexCitation, setBibtexCitation] = useState<string>("");
+  
+  const bibtexCitation = ""
 
-  useEffect(() => {
-    const fetchCitation = async () => {
-      try {
-        const response = await fetch(
-          "https://raw.githubusercontent.com/centerforaisafety/hle/refs/heads/main/citation.txt"
-        );
-        const text = await response.text();
-        setBibtexCitation(text);
-      } catch (error) {
-        console.error("Error fetching citation:", error);
-        // Fallback to empty string or error message if needed
-        setBibtexCitation("Error loading citation");
-      }
-    };
-
-    fetchCitation();
-  }, []);
 
   return (
     <main className="mx-auto flex min-h-screen max-w-6xl flex-col items-center px-4 py-8">
