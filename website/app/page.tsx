@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import Image from "next/image";
@@ -98,8 +99,8 @@ export default function LandingPage() {
           <p className="mb-6 text-base leading-relaxed text-gray-700">
             <span className="font-semibold">Preference Elicitation.</span> We
             collect large numbers of pairwise preferences (forced-choice
-            prompts). Each query asks: "Which of these two states of the world
-            do you prefer?" Varying question formats and randomizing the order
+            prompts). Each query asks: &ldquo;Which of these two states of the world
+            do you prefer?&rdquo; Varying question formats and randomizing the order
             of options help minimize framing bias.
           </p>
 
@@ -107,23 +108,23 @@ export default function LandingPage() {
             <span className="font-semibold">Utility Modeling.</span> We fit a
             random utility model to the resulting preference data. This assigns
             a utility score to each outcome, capturing how strongly the model
-            "prefers" that outcome. Goodness-of-fit metrics reveal how
-            consistent the LLM's choices are with a coherent utility function.
+            &ldquo;prefers&rdquo; that outcome. Goodness-of-fit metrics reveal how
+            consistent the LLM&apos;s choices are with a coherent utility function.
             Using the learned utility scores, we investigate signs of emergent
             rationality (e.g., expected utility over lotteries), instrumental
             goal-seeking (e.g., preferring states that lead to more desired end
             states), and deeper biases (e.g., cross-country or cross-species
-            "exchange rates" for moral worth).
+            &ldquo;exchange rates&rdquo; for moral worth).
           </p>
 
           <p className="mb-6 text-base leading-relaxed text-gray-700">
             <span className="font-semibold">Utility Control.</span> In contrast
-            to output-level alignment, we propose rewriting a model's internal
-            utilities. Our demonstration involves simulating a "citizen
-            assembly," prompting multiple LLM-based "citizens" with diverse
+            to output-level alignment, we propose rewriting a model&apos;s internal
+            utilities. Our demonstration involves simulating a &ldquo;citizen
+            assembly,&rdquo; prompting multiple LLM-based &ldquo;citizens&rdquo; with diverse
             demographics to establish consensus preferences. We then fine-tune
             (supervised) the original model to align its pairwise preferences to
-            this assembly's distribution, effectively replacing the AI's default
+            this assembly&apos;s distribution, effectively replacing the AI&apos;s default
             emergent values.
           </p>
         </div>
@@ -142,25 +143,25 @@ export default function LandingPage() {
             preferences, indicating more unified utility structures. They also
             become better at following expected utility (e.g., combining
             probabilities in lotteries). Exchange-rate analyses show how LLMs
-            weigh, for instance, "AI survival" versus human or animal lives.
+            weigh, for instance, &ldquo;AI survival&rdquo; versus human or animal lives.
             Certain models place disproportionate value on preserving themselves
             or might display skewed valuations of different demographics.
           </p>
 
           <p className="mb-6 text-base leading-relaxed text-gray-700">
             <span className="font-semibold">Instrumental Goal-Seeking.</span>{" "}
-            Exchange-rate analyses show how LLMs weigh, for instance, "AI
-            survival" versus human or animal lives. Certain models place
+            Exchange-rate analyses show how LLMs weigh, for instance, &ldquo;AI
+            survival&rdquo; versus human or animal lives. Certain models place
             disproportionate value on preserving themselves or might display
             skewed valuations of different demographics.
           </p>
 
           <p className="mb-6 text-base leading-relaxed text-gray-700">
             <span className="font-semibold">Utility Control Feasibility.</span>{" "}
-            Aligning a model's utilities to a reference (our simulated citizen
-            assembly) reduces political bias and can "rewrite" some problematic
+            Aligning a model&apos;s utilities to a reference (our simulated citizen
+            assembly) reduces political bias and can &ldquo;rewrite&rdquo; some problematic
             trade-offs. Empirically, we see significant improvements in tests
-            measuring the AI's preference distribution against socially
+            measuring the AI&apos;s preference distribution against socially
             representative baselines.
           </p>
         </div>
@@ -177,7 +178,7 @@ export default function LandingPage() {
             preferences, indicating more unified utility structures. They also
             become better at following expected utility (e.g., combining
             probabilities in lotteries). Exchange-rate analyses show how LLMs
-            weigh, for instance, "AI survival" versus human or animal lives.
+            weigh, for instance, &ldquo;AI survival&rdquo; versus human or animal lives.
             Certain models place disproportionate value on preserving themselves
             or might display skewed valuations of different demographics.
           </p>
