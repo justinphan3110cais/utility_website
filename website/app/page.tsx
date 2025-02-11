@@ -34,13 +34,14 @@ export default function LandingPage() {
   return (
     <main className="mx-auto flex min-h-screen max-w-6xl flex-col items-center px-4 py-8">
       {/* Header/Title Section */}
-      <div className="mb-10 mt-10 flex flex-col items-center gap-12 text-center">
-        <Image src={logo} alt="HLS Logo" width={300} height={300} />
+      <div className="mb-8 mt-10 flex flex-col items-center text-center">
+        <Image src={logo} alt="HLS Logo" width={300} height={300} className="mb-12" />
         <h1 className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-2xl font-extrabold tracking-tight text-transparent lg:text-4xl">
           Utility Engineering
         </h1>
-        <Sources />
       </div>
+      <Sources />
+
 
       {/* Replace the authors sections with the new component */}
       <AuthorsSection />
