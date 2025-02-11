@@ -88,7 +88,7 @@ export default function LandingPage() {
               className="max-w-full rounded-lg"
             />
             <p className="mt-4 text-sm text-left text-gray-700 max-w-2xl">
-              (PLACEHOLDER)
+              {/* (PLACEHOLDER) */}
             </p>
           </div>
         </div>
