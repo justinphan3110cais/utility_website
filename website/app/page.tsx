@@ -8,10 +8,10 @@ import figure2 from "@/app/assets/figures/fig2.png";
 import { AuthorsSection } from "@/app/authors-section";
 import { /* MessageSquare, Mail */ } from "lucide-react";
 import Sources from "@/app/Sources";
-
+import { BIBTEX_CITATION } from "@/app/constants";
 export default function LandingPage() {
   
-  const bibtexCitation = ""
+  const bibtexCitation = BIBTEX_CITATION;
 
 
   return (
@@ -85,8 +85,8 @@ export default function LandingPage() {
 
           <div className="relative">
             <div className="rounded-lg bg-gray-50 p-4">
-              <pre className="max-h-[200px] overflow-y-scroll whitespace-pre-wrap text-sm scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
-                {/* {bibtexCitation} */}
+              <pre className="max-h-[200px] overflow-x-auto overflow-y-scroll whitespace-pre text-sm scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+                {bibtexCitation}
               </pre>
               <button
                 onClick={() => {
