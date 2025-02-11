@@ -65,15 +65,15 @@ export function AuthorsSection() {
       </div>
 
       {/* Authors content */}
-      <div className="w-full">
+      <div className="w-full text-base">
         <div
           className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
             showAuthors ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="mx-auto max-w-4xl rounded-lg p-6 text-center">
-            <p className="text-sm">{renderAuthors(authorGroups.firstLine)}</p>
-            <p className="mt-2 text-sm">
+            <p className="text-base">{renderAuthors(authorGroups.firstLine)}</p>
+            <p className="mt-2 text-base">
               {renderAuthors(authorGroups.secondLine)}
             </p>
             <p className="mt-4 text-sm font-semibold text-gray-700">
