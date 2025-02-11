@@ -9,31 +9,19 @@ export function AuthorsSection() {
 
   const authorGroups = {
     firstLine: [
-      { name: "Long Phan", sup: "*1", link: "https://longphan.ai" },
-      { name: "Alice Gatti", sup: "*1", link: "https://scholar.google.com/citations?user=Wm-EioQAAAAJ&hl=it&oi=ao" },
-      { name: "Ziwen Han", sup: "*2", link: "https://scholar.google.com/citations?user=Jmbr0B8AAAAJ&hl=en" },
-      { name: "Nathaniel Li", sup: "*1", link: "https://nli0.github.io" },
+      { name: "Mantas Mazeika", sup: "1", link: "https://scholar.google.com/citations?user=fGeEmLQAAAAJ&hl=en" },
+      { name: "Xuwang Yin", sup: "1", link: "https://scholar.google.com/citations?user=c425B6UAAAAJ&hl=zh-CN" },
+      { name: "Rishub Tamirisa", sup: "1", link: "https://rishub-tamirisa.github.io/research" },
+      { name: "Jaehyuk Lim", sup: "2", link: "https://www.linkedin.com/in/jasonlim131/" },
+      { name: "Bruce W. Lee", sup: "2", link: "https://brucewlee.com/" },
     ],
     secondLine: [
-      { name: "Josephina Hu", sup: "2", link: "" },
-      { name: "Hugh Zhang", sup: "‡", link: "https://hughbzhang.com" },
-      { name: "Sean Shi", sup: "2", link: "" },
-      { name: "Michael Choi", sup: "2", link: "" },
-      { name: "Anish Agrawal", sup: "2", link: "" },
-      { name: "Arnav Chopra", sup: "2", link: "" },
-    ],
-    thirdLine: [
-      { name: "Adam Khoja", sup: "1", link: "" },
-      { name: "Ryan Kim", sup: "†", link: "" },
-      { name: "Richard Ren", sup: "1", link: "https://notrichardren.github.io" },
-      { name: "Jason Hausenloy", sup: "1", link: "" },
+      { name: "Richard Ren", sup: "2", link: "https://notrichardren.github.io" },
+      { name: "Long Phan", sup: "1", link: "https://longphan.ai/" },
+      { name: "Norman Mu", sup: "3", link: "https://www.normanmu.com/" },
+      { name: "Adam Khoja", sup: "1", link: "https://www.linkedin.com/in/adam-khoja-103/" },
       { name: "Oliver Zhang", sup: "1", link: "" },
-      { name: "Mantas Mazeika", sup: "1", link: "https://scholar.google.com/citations?user=fGeEmLQAAAAJ&hl=en" },
-    ],
-    lastLine: [
-      { name: "Summer Yue", sup: "**2", link: "https://www.linkedin.com/in/yutingyue" },
-      { name: "Alexandr Wang", sup: "**2", link: "https://www.linkedin.com/in/alexandrwang" },
-      { name: "Dan Hendrycks", sup: "**1", link: "https://people.eecs.berkeley.edu/~hendrycks" },
+      { name: "Dan Hendrycks", sup: "1", link: "https://people.eecs.berkeley.edu/~hendrycks/" },
     ],
   };
 
@@ -88,14 +76,8 @@ export function AuthorsSection() {
             <p className="mt-2 text-sm">
               {renderAuthors(authorGroups.secondLine)}
             </p>
-            <p className="mt-2 text-sm">
-              {renderAuthors(authorGroups.thirdLine)}
-            </p>
-            <p className="mt-2 text-sm">
-              {renderAuthors(authorGroups.lastLine)}
-            </p>
             <p className="mt-4 text-sm font-semibold text-gray-700">
-              <sup>1</sup>Center for AI Safety, <sup>2</sup>Scale AI
+              <sup>1</sup>Center for AI Safety, <sup>2</sup>University of Pennsylvania, <sup>3</sup>University of California, Berkeley
             </p>
           </div>
         </div>

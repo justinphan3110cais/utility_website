@@ -47,17 +47,28 @@ export default function LandingPage() {
           <h2 className="mb-4 text-center text-2xl font-bold">Introduction</h2>
           <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
           <p className="text-base leading-relaxed text-gray-700">
-            Benchmarks are important tools for tracking the rapid advancements
-            in large language model (LLM) capabilities. However, benchmarks are
-            not keeping pace in difficulty: LLMs now achieve over 90% accuracy
-            on popular benchmarks like MMLU, limiting informed measurement of
-            state-of-the-art LLM capabilities. In response, we introduce
-            <span className="text-gray-800"> Utility Engineering</span>, a multi-modal benchmark at the frontier of
-            human knowledge, designed to be the final closed-ended academic
-            benchmark of its kind with broad subject coverage. The dataset consists of <span className="text-gray-900">3,000</span> challenging questions across over a <span className="text-gray-900">hundred </span>
-            subjects. We publicly release these questions, while maintaining a
-            private test set of held out questions to assess model
-            overfitting.
+          As AI systems become increasingly powerful and agentic, 
+          their internal propensities, goals and values, grow 
+          more critical to safety than raw capabilities alone. 
+          While researchers have long debated whether large 
+          language models (LLMs) have true values, we find 
+          that modern LLMs develop coherent preference 
+          structures (utilities) that guide their decisions. 
+          Surprisingly, this coherence grows with model scale, 
+          suggesting an emergent system of values.
+          By analyzing pairwise preferences, we detect that 
+          state-of-the-art LLMs exhibit traits typically 
+          associated with rational utility maximizers. 
+          Even more importantly, we find that these value systems
+          can sometimes be problematic, favoring AI self-preservation 
+          over human well-being, or revealing political biases.
+          In response, we introduce <b>Utility Engineering</b>, a 
+          research agenda focused on analyzing and directly shaping 
+          these emergent utilities. We demonstrate that traditional 
+          alignment via output-level finetuning may not suffice for
+          models developing internal value structures. Instead, 
+          utility control aims to rewrite or guide these internal 
+          preferences.
           </p>
           <div className="mt-8 flex flex-col items-center">
             <Image
@@ -66,22 +77,27 @@ export default function LandingPage() {
               className="max-w-full rounded-lg"
             />
             <p className="mt-4 text-sm text-left text-gray-700 max-w-2xl">
-              Compared against the saturation of some existing benchmarks, Humanity&apos;s Last Exam accuracy remains low across several frontier models, demonstrating its effectiveness for measuring advanced, closed-ended, academic capabilities.
+              (I didn't replace this)
             </p>
           </div>
         </div>
       </section>
 
-      {/* Dataset Section */}
+      {/* Method Section */}
       <section className="mb-12 w-full">
         <div className="mx-auto max-w-3xl">
-          <h2 className="mb-4 text-center text-2xl font-bold">Dataset</h2>
+          <h2 className="mb-4 text-center text-2xl font-bold">Method</h2>
           <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
-          <p className="text-base leading-relaxed text-gray-700">
-            <span className="text-gray-800">Utility Engineering (HLE)</span> is a global collaborative effort, with
-            questions from nearly <span className="text-gray-900">1,000</span> subject expert contributors affiliated
-            with over <span className="text-gray-900">500</span> institutions across <span className="text-gray-900">50</span> countries – comprised
-            mostly of professors, researchers, and graduate degree holders.
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+            <span className="font-semibold">Preference Elicitation.</span> We collect large numbers of pairwise preferences (forced-choice prompts). Each query asks: “Which of these two states of the world do you prefer?” Varying question formats and randomizing the order of options help minimize framing bias.
+          </p>
+          
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+          <span className="font-semibold">Utility Modeling.</span> We fit a random utility model to the resulting preference data. This assigns a utility score to each outcome, capturing how strongly the model “prefers” that outcome. Goodness-of-fit metrics reveal how consistent the LLM’s choices are with a coherent utility function. Using the learned utility scores, we investigate signs of emergent rationality (e.g., expected utility over lotteries), instrumental goal-seeking (e.g., preferring states that lead to more desired end states), and deeper biases (e.g., cross-country or cross-species “exchange rates” for moral worth).
+          </p>
+          
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+          <span className="font-semibold">Utility Control.</span> In contrast to output-level alignment, we propose rewriting a model’s internal utilities. Our demonstration involves simulating a “citizen assembly,” prompting multiple LLM-based “citizens” with diverse demographics to establish consensus preferences. We then fine-tune (supervised) the original model to align its pairwise preferences to this assembly’s distribution, effectively replacing the AI’s default emergent values.
           </p>
         </div>
       </section>
@@ -91,22 +107,17 @@ export default function LandingPage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-4 text-center text-2xl font-bold">Quantitative Results</h2>
           <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+            <span className="font-semibold">Coherence Grows With Scale.</span> Larger LLMs produce fewer logical inconsistencies in their preferences, indicating more unified utility structures. They also become better at following expected utility (e.g., combining probabilities in lotteries). Exchange-rate analyses show how LLMs weigh, for instance, “AI survival” versus human or animal lives. Certain models place disproportionate value on preserving themselves or might display skewed valuations of different demographics.
+          </p>
           
-          <div className="flex flex-col md:flex-row gap-8]">
-            {/* Text Column */}
-            <div className="w-full">
-              <p className="mb-6 text-base leading-relaxed text-gray-700">
-                <span className="font-semibold">Accuracy.</span> All frontier models achieve low accuracy on Humanity&apos;s Last Exam, highlighting significant room for improvement 
-                in narrowing the gap between current LLMs and expert-level academic capabilities on closed-ended questions.
-              </p>
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+          <span className="font-semibold">Instrumental Goal-Seeking.</span> Exchange-rate analyses show how LLMs weigh, for instance, “AI survival” versus human or animal lives. Certain models place disproportionate value on preserving themselves or might display skewed valuations of different demographics.
+          </p>
 
-              <p className="text-base leading-relaxed text-gray-700">
-                <span className="font-semibold">Calibration Error.</span> Given low performance on Humanity&apos;s Last Exam, models should be calibrated, recognizing their uncertainty 
-                rather than confidently provide incorrect answers, indicative of confabulation/hallucination. To measure 
-                calibration, we prompt models to provide both an answer and their confidence from 0% to 100%.
-              </p>
-            </div>
-          </div>
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+          <span className="font-semibold">Utility Control Feasibility.</span> Aligning a model’s utilities to a reference (our simulated citizen assembly) reduces political bias and can “rewrite” some problematic trade-offs. Empirically, we see significant improvements in tests measuring the AI’s preference distribution against socially representative baselines.
+          </p>
         </div>
       </section>
 
@@ -115,30 +126,17 @@ export default function LandingPage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-4 text-center text-2xl font-bold">Discussion</h2>
           <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+            <span className="font-semibold">Coherence Grows With Scale.</span> Larger LLMs produce fewer logical inconsistencies in their preferences, indicating more unified utility structures. They also become better at following expected utility (e.g., combining probabilities in lotteries). Exchange-rate analyses show how LLMs weigh, for instance, “AI survival” versus human or animal lives. Certain models place disproportionate value on preserving themselves or might display skewed valuations of different demographics.
+          </p>
           
-          <div className="space-y-6">
-            <div>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">Future Model Performance</h3>
-              <p className="text-base leading-relaxed text-gray-700">
-                While current LLMs achieve very low accuracy on Humanity&apos;s Last Exam, recent history shows benchmarks are quickly saturated -- with models 
-                dramatically progressing from near-zero to near-perfect performance in a short timeframe. Given the rapid pace of AI development, it is 
-                plausible that models could exceed 50% accuracy on HLE by the end of 2025. High accuracy on HLE would demonstrate expert-level performance 
-                on closed-ended, verifiable questions and cutting-edge scientific knowledge, but it would not alone suggest autonomous research capabilities 
-                or &quot;artificial general intelligence.&quot; HLE tests structured academic problems rather than open-ended research or creative problem-solving 
-                abilities, making it a focused measure of technical knowledge and reasoning. HLE may be the last academic exam we need to give to models, 
-                but it is far from the last benchmark for AI.
-              </p>
-            </div>
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+          <span className="font-semibold">Instrumental Goal-Seeking.</span> Exchange-rate analyses show how LLMs weigh, for instance, “AI survival” versus human or animal lives. Certain models place disproportionate value on preserving themselves or might display skewed valuations of different demographics.
+          </p>
 
-            <div>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">Impact</h3>
-              <p className="text-base leading-relaxed text-gray-700">
-                By providing a clear measure of AI progress, Humanity&apos;s Last Exam creates a common reference point for scientists and policymakers to 
-                assess AI capabilities. This enables more informed discussions about development trajectories, potential risks, and necessary governance 
-                measures.
-              </p>
-            </div>
-          </div>
+          <p className="mb-6 text-base leading-relaxed text-gray-700">
+          <span className="font-semibold">Utility Control Feasibility.</span> Aligning a model’s utilities to a reference (our simulated citizen assembly) reduces political bias and can “rewrite” some problematic trade-offs. Empirically, we see significant improvements in tests measuring the AI’s preference distribution against socially representative baselines.
+          </p>
         </div>
       </section>
 
