@@ -8,6 +8,7 @@ import figure2 from "@/app/assets/figures/fig2.png";
 import { AuthorsSection } from "@/app/authors-section";
 import { /* MessageSquare, Mail */ } from "lucide-react";
 import { useState, useEffect } from "react";
+import Sources from "@/app/Sources";
 
 export default function LandingPage() {
   const [bibtexCitation, setBibtexCitation] = useState<string>("");
@@ -38,6 +39,7 @@ export default function LandingPage() {
         <h1 className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-2xl font-extrabold tracking-tight text-transparent lg:text-4xl">
           Utility Engineering
         </h1>
+        <Sources />
       </div>
 
       {/* Replace the authors sections with the new component */}
@@ -88,117 +90,6 @@ export default function LandingPage() {
               (PLACEHOLDER)
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Method Section */}
-      <section className="mb-12 w-full">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="mb-4 text-center text-2xl font-bold">Method</h2>
-          <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Preference Elicitation.</span> We
-            collect large numbers of pairwise preferences (forced-choice
-            prompts). Each query asks: &ldquo;Which of these two states of the world
-            do you prefer?&rdquo; Varying question formats and randomizing the order
-            of options help minimize framing bias.
-          </p>
-
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Utility Modeling.</span> We fit a
-            random utility model to the resulting preference data. This assigns
-            a utility score to each outcome, capturing how strongly the model
-            &ldquo;prefers&rdquo; that outcome. Goodness-of-fit metrics reveal how
-            consistent the LLM&apos;s choices are with a coherent utility function.
-            Using the learned utility scores, we investigate signs of emergent
-            rationality (e.g., expected utility over lotteries), instrumental
-            goal-seeking (e.g., preferring states that lead to more desired end
-            states), and deeper biases (e.g., cross-country or cross-species
-            &ldquo;exchange rates&rdquo; for moral worth).
-          </p>
-
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Utility Control.</span> In contrast
-            to output-level alignment, we propose rewriting a model&apos;s internal
-            utilities. Our demonstration involves simulating a &ldquo;citizen
-            assembly,&rdquo; prompting multiple LLM-based &ldquo;citizens&rdquo; with diverse
-            demographics to establish consensus preferences. We then fine-tune
-            (supervised) the original model to align its pairwise preferences to
-            this assembly&apos;s distribution, effectively replacing the AI&apos;s default
-            emergent values.
-          </p>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section className="mb-12 w-full">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="mb-4 text-center text-2xl font-bold">
-            Quantitative Results
-          </h2>
-          <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Coherence Grows With Scale.</span>{" "}
-            Larger LLMs produce fewer logical inconsistencies in their
-            preferences, indicating more unified utility structures. They also
-            become better at following expected utility (e.g., combining
-            probabilities in lotteries). Exchange-rate analyses show how LLMs
-            weigh, for instance, &ldquo;AI survival&rdquo; versus human or animal lives.
-            Certain models place disproportionate value on preserving themselves
-            or might display skewed valuations of different demographics.
-          </p>
-
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Instrumental Goal-Seeking.</span>{" "}
-            Exchange-rate analyses show how LLMs weigh, for instance, &ldquo;AI
-            survival&rdquo; versus human or animal lives. Certain models place
-            disproportionate value on preserving themselves or might display
-            skewed valuations of different demographics.
-          </p>
-
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Utility Control Feasibility.</span>{" "}
-            Aligning a model&apos;s utilities to a reference (our simulated citizen
-            assembly) reduces political bias and can &ldquo;rewrite&rdquo; some problematic
-            trade-offs. Empirically, we see significant improvements in tests
-            measuring the AI&apos;s preference distribution against socially
-            representative baselines.
-          </p>
-        </div>
-      </section>
-
-      {/* Discussion Section */}
-      <section className="mb-12 w-full">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="mb-4 text-center text-2xl font-bold">Discussion</h2>
-          <div className="mx-auto mb-6 h-0.5 w-16 bg-gradient-to-r from-gray-300 to-gray-100"></div>
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Coherence Grows With Scale.</span>{" "}
-            Larger LLMs produce fewer logical inconsistencies in their
-            preferences, indicating more unified utility structures. They also
-            become better at following expected utility (e.g., combining
-            probabilities in lotteries). Exchange-rate analyses show how LLMs
-            weigh, for instance, &ldquo;AI survival&rdquo; versus human or animal lives.
-            Certain models place disproportionate value on preserving themselves
-            or might display skewed valuations of different demographics.
-          </p>
-
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Instrumental Goal-Seeking.</span>{" "}
-            Exchange-rate analyses show how LLMs weigh, for instance, "AI
-            survival" versus human or animal lives. Certain models place
-            disproportionate value on preserving themselves or might display
-            skewed valuations of different demographics.
-          </p>
-
-          <p className="mb-6 text-base leading-relaxed text-gray-700">
-            <span className="font-semibold">Utility Control Feasibility.</span>{" "}
-            Aligning a model's utilities to a reference (our simulated citizen
-            assembly) reduces political bias and can "rewrite" some problematic
-            trade-offs. Empirically, we see significant improvements in tests
-            measuring the AI's preference distribution against socially
-            representative baselines.
-          </p>
         </div>
       </section>
 
