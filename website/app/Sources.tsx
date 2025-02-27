@@ -8,7 +8,7 @@ export default function Sources() {
     <div className="flex justify-center gap-8 sm:gap-8 my-2">
       <div className="flex flex-col items-center sm:items-start">
         <a className="flex flex-col sm:flex-row items-center" href={PAPER_URL} target="_blank">
-          <FileText className="mb-1 sm:mb-0 sm:mr-1.5 h-4 w-4" /> Paper
+          <FileText className="mb-1 sm:mb-0 sm:mr-1.5 h-4 w-4" /> <b>Paper</b>
         </a>
         {/* <span className="text-muted-foreground text-xs text-center sm:text-left">(arXiv coming soon)</span> */}
       </div>
@@ -23,7 +23,7 @@ export default function Sources() {
             alt="GitHub" 
             className="mb-1 sm:mb-0 sm:mr-1.5 h-4 w-4" 
           /> 
-          GitHub
+          <b>GitHub</b>
         </a>
       </div>
     </div>
